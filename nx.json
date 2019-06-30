@@ -1,0 +1,18 @@
+{
+  "npmScope": "shorwcom",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "shorwcom": {
+      "tags": []
+    },
+    "shorwcom-e2e": {
+      "tags": []
+    }
+  }
+}

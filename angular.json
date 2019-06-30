@@ -1,0 +1,119 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "shorwcom": {
+      "root": "apps/shorwcom",
+      "sourceRoot": "apps/shorwcom/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/shorwcom",
+            "index": "apps/shorwcom/src/index.html",
+            "main": "apps/shorwcom/src/main.tsx",
+            "polyfills": "apps/shorwcom/src/polyfills.ts",
+            "tsConfig": "apps/shorwcom/tsconfig.app.json",
+            "assets": [
+              "apps/shorwcom/src/favicon.ico",
+              "apps/shorwcom/src/assets"
+            ],
+            "styles": ["apps/shorwcom/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/shorwcom/src/environments/environment.ts",
+                  "with": "apps/shorwcom/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "shorwcom:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "shorwcom:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/shorwcom/tsconfig.app.json",
+              "apps/shorwcom/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/shorwcom/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/shorwcom/jest.config.js",
+            "tsConfig": "apps/shorwcom/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "shorwcom-e2e": {
+      "root": "apps/shorwcom-e2e",
+      "sourceRoot": "apps/shorwcom-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/shorwcom-e2e/cypress.json",
+            "tsConfig": "apps/shorwcom-e2e/tsconfig.e2e.json",
+            "devServerTarget": "shorwcom:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shorwcom:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/shorwcom-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/shorwcom-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {},
+  "defaultProject": "shorwcom"
+}
