@@ -3,33 +3,33 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "shorwcom": {
-      "root": "apps/shorwcom",
-      "sourceRoot": "apps/shorwcom/src",
+    "surecomp": {
+      "root": "apps/surecomp",
+      "sourceRoot": "apps/surecomp/src",
       "projectType": "application",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/web:build",
           "options": {
-            "outputPath": "dist/apps/shorwcom",
-            "index": "apps/shorwcom/src/index.html",
-            "main": "apps/shorwcom/src/main.tsx",
-            "polyfills": "apps/shorwcom/src/polyfills.ts",
-            "tsConfig": "apps/shorwcom/tsconfig.app.json",
+            "outputPath": "dist/apps/surecomp",
+            "index": "apps/surecomp/src/index.html",
+            "main": "apps/surecomp/src/main.tsx",
+            "polyfills": "apps/surecomp/src/polyfills.ts",
+            "tsConfig": "apps/surecomp/tsconfig.app.json",
             "assets": [
-              "apps/shorwcom/src/favicon.ico",
-              "apps/shorwcom/src/assets"
+              "apps/surecomp/src/favicon.ico",
+              "apps/surecomp/src/assets"
             ],
-            "styles": ["apps/shorwcom/src/styles.scss"],
+            "styles": ["apps/surecomp/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/shorwcom/src/environments/environment.ts",
-                  "with": "apps/shorwcom/src/environments/environment.prod.ts"
+                  "replace": "apps/surecomp/src/environments/environment.ts",
+                  "with": "apps/surecomp/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -52,11 +52,11 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "shorwcom:build"
+            "buildTarget": "surecomp:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "shorwcom:build:production"
+              "buildTarget": "surecomp:build:production"
             }
           }
         },
@@ -64,44 +64,44 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/shorwcom/tsconfig.app.json",
-              "apps/shorwcom/tsconfig.spec.json"
+              "apps/surecomp/tsconfig.app.json",
+              "apps/surecomp/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/shorwcom/**"]
+            "exclude": ["**/node_modules/**", "!apps/surecomp/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/shorwcom/jest.config.js",
-            "tsConfig": "apps/shorwcom/tsconfig.spec.json"
+            "jestConfig": "apps/surecomp/jest.config.js",
+            "tsConfig": "apps/surecomp/tsconfig.spec.json"
           }
         }
       }
     },
-    "shorwcom-e2e": {
-      "root": "apps/shorwcom-e2e",
-      "sourceRoot": "apps/shorwcom-e2e/src",
+    "surecomp-e2e": {
+      "root": "apps/surecomp-e2e",
+      "sourceRoot": "apps/surecomp-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/shorwcom-e2e/cypress.json",
-            "tsConfig": "apps/shorwcom-e2e/tsconfig.e2e.json",
-            "devServerTarget": "shorwcom:serve"
+            "cypressConfig": "apps/surecomp-e2e/cypress.json",
+            "tsConfig": "apps/surecomp-e2e/tsconfig.e2e.json",
+            "devServerTarget": "surecomp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "shorwcom:serve:production"
+              "devServerTarget": "surecomp:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/shorwcom-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**", "!apps/shorwcom-e2e/**"]
+            "tsConfig": "apps/surecomp-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/surecomp-e2e/**"]
           }
         }
       }
@@ -115,5 +115,5 @@
     "defaultCollection": "@nrwl/react"
   },
   "schematics": {},
-  "defaultProject": "shorwcom"
+  "defaultProject": "surecomp"
 }

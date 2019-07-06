@@ -1,5 +1,5 @@
 {
-  "npmScope": "shorwcom",
+  "npmScope": "surecomp",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -8,10 +8,10 @@
     "nx.json": "*"
   },
   "projects": {
-    "shorwcom": {
+    "surecomp": {
       "tags": []
     },
-    "shorwcom-e2e": {
+    "surecomp-e2e": {
       "tags": []
     }
   }
