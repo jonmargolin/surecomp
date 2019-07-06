@@ -1,1 +1,1 @@
-const  aux =( props ) => props.children;
+const aux = props => props.children;
