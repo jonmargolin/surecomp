@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import GoogleLogin from 'react-google-login';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
+import { environment } from '../../environments/environment';
 const styles = () => ({
 	root: {
 		backgroundColor: 'red'
@@ -27,7 +28,7 @@ export const Login = React.memo(({ onLogin, classes }: IProps) => (
 		<Grid container spacing={1}>
 			<Grid item xs={12} sm={12}>
 				<GoogleLogin
-					clientId="305306238492-bdt1a0gv0p3s9vdgknpvanrrgpha7pef.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
+					clientId={environment.google} //CLIENTID NOT CREATED YET
 					buttonText="LOGIN WITH GOOGLE"
 					onSuccess={onLogin}
 					onFailure={onLogin}
